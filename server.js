@@ -1,5 +1,12 @@
-let fs = require('fs');
-let os = require('os');
+const express = require('express')
+const app = express()
 
-let user = os.userInfo();
-console.log(user);
+app.get('/', function (req, res) {
+  res.send('Welcome to my hotel. How I can help you?')
+})
+
+app.get('/chicken', (req, res) => {
+  res.send('Sure why not?')
+})
+
+app.listen(3000)
