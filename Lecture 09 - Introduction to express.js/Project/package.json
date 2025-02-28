@@ -1,0 +1,17 @@
+{
+  "name": "practice-set",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Mukul Joshi",
+  "type": "commonjs",
+  "main": "practiceSet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon practiceSet.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}
