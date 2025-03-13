@@ -20,9 +20,8 @@ userRouter.route("/register").post(
 
 userRouter.route("/login").post(loginUser)
 
-// Secures routes
+// Secured routes
 userRouter.route("/logout").post(verifyJWT, logoutUser)
 userRouter.route("/refresh-token").post(refreshAccessToken)
-
 
 export default userRouter
