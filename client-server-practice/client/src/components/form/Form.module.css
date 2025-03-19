@@ -1,0 +1,48 @@
+.Form {
+  max-width: 500px;
+  margin: auto;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nameInput {
+  width: 200px;
+  height: 30px;
+  margin: 6px 0;
+  margin-top: 10px;
+  padding-left: 10px;
+  outline: none;
+}
+
+.emailInput {
+  width: 200px;
+  height: 30px;
+  margin: 6px 0;
+  padding-left: 10px;
+  outline: none;
+}
+
+.passwordInput {
+  width: 200px;
+  height: 30px;
+  margin: 6px 0;
+  padding-left: 10px;
+  outline: none;
+}
+
+.submitBtn {
+  width: 216px;
+  height: 36px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(0, 94, 255);
+  color: white;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  opacity: 0.9;
+}
