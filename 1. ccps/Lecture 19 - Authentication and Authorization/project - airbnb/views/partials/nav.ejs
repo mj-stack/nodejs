@@ -1,0 +1,87 @@
+<header class="bg-red-500 text-white shadow-md">
+  <div class="container mx-auto px-4 py-3">
+    <nav class="flex justify-between items-center">
+      <!-- Left side - Logo and main navigation -->
+      <div class="flex items-center space-x-6">
+        <!-- Logo with icon -->
+        <a href="/" class="text-2xl font-bold flex items-center space-x-2 <%= currentPage === 'index' ? 'text-white' : 'text-red-100' %> hover:text-white">
+          <span>🏠</span>
+          <span>airbnb</span>
+        </a>
+
+        <!-- Main Navigation with icons -->
+        <% if (isLoggedIn) { %>
+          <div class="flex items-center space-x-4">
+            <a href="/homes" class="nav-link <%= currentPage === 'Home' ? 'active' : '' %>">
+              🏡 Homes
+            </a>
+            <a href="/favourites" class="nav-link <%= currentPage === 'favourites' ? 'active' : '' %>">
+              ❤️ Favourites
+            </a>
+            <a href="/bookings" class="nav-link <%= currentPage === 'bookings' ? 'active' : '' %>">
+              📅 Bookings
+            </a>
+            <a href="/host/host-home-list" class="nav-link <%= currentPage === 'host-homes' ? 'active' : '' %>">
+              🏢 Host Homes
+            </a>
+            <a href="/host/add-home" class="nav-link <%= currentPage === 'addHome' ? 'active' : '' %>">
+              ➕ Add Home
+            </a>
+          </div>
+        <% } %>
+      </div>
+
+      <!-- Right side - Auth buttons with redesigned styles -->
+      <div class="flex items-center space-x-4">
+        <% if (!isLoggedIn) { %>
+          <a href="/signup" class="auth-button bg-white text-red-500 border border-red-500 hover:bg-red-500 hover:text-white">
+            🔑 Sign Up
+          </a>
+          <a href="/login" class="auth-button bg-red-600 border border-transparent hover:bg-white hover:text-red-500 hover:border-red-500">
+            🔒 Login
+          </a>
+        <% } else { %>
+          <form action="/logout" method="POST">
+            <button type="submit" class="auth-button bg-red-600 border border-transparent hover:bg-white hover:text-red-500 hover:border-red-500">
+              🚪 Logout
+            </button>
+          </form>
+        <% } %>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s;
+  }
+  .nav-link:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+  .auth-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.5rem;
+    border-radius: 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+  }
+  .auth-button:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+</style>
