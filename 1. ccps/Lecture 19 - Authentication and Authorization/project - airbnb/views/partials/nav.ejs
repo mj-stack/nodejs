@@ -11,22 +11,25 @@
 
         <!-- Main Navigation with icons -->
         <% if (isLoggedIn) { %>
-          <div class="flex items-center space-x-4">
-            <a href="/homes" class="nav-link <%= currentPage === 'Home' ? 'active' : '' %>">
-              🏡 Homes
-            </a>
-            <a href="/favourites" class="nav-link <%= currentPage === 'favourites' ? 'active' : '' %>">
-              ❤️ Favourites
-            </a>
-            <a href="/bookings" class="nav-link <%= currentPage === 'bookings' ? 'active' : '' %>">
-              📅 Bookings
-            </a>
-            <a href="/host/host-home-list" class="nav-link <%= currentPage === 'host-homes' ? 'active' : '' %>">
-              🏢 Host Homes
-            </a>
-            <a href="/host/add-home" class="nav-link <%= currentPage === 'addHome' ? 'active' : '' %>">
-              ➕ Add Home
-            </a>
+          <% if (user && user.userType === 'guest') { %>                                       
+            <div class="flex items-center space-x-4">
+              <a href="/homes" class="nav-link <%= currentPage === 'Home' ? 'active' : '' %>">
+                🏡 Homes
+              </a>
+              <a href="/favourites" class="nav-link <%= currentPage === 'favourites' ? 'active' : '' %>">
+                ❤️ Favourites
+              </a>
+              <a href="/bookings" class="nav-link <%= currentPage === 'bookings' ? 'active' : '' %>">
+                📅 Bookings
+              </a>
+          <% } else { %>
+              <a href="/host/host-home-list" class="nav-link <%= currentPage === 'host-homes' ? 'active' : '' %>">
+                🏢 Host Homes
+              </a>
+              <a href="/host/add-home" class="nav-link <%= currentPage === 'addHome' ? 'active' : '' %>">
+                ➕ Add Home
+              </a>
+          <% } %>
           </div>
         <% } %>
       </div>
